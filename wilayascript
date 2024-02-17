@@ -1,0 +1,35 @@
+<script>
+    function getWilayas() {
+        fetch('https://youcan.dev/ressources/communes-algerie')
+            .then(response => response.json())
+            .then(data => {
+                const select = document.getElementById('wilayaSelect');
+                data.forEach(wilaya => {
+                    const option = document.createElement('option');
+                    option.value = wilaya.id;
+                    option.textContent = wilaya.name;
+                    select.appendChild(option);
+                });
+            });
+    }
+
+    function getCommunes() {
+        const wilayaId = document.getElementById('wilayaSelect').value;
+        if (wilayaId) {
+            fetch(`https://youcan.dev/ressources/communes-algerie/${wilayaId}`)
+                .then(response => response.json())
+                .then(data => {
+                    const communesList = document.getElementById('communesList');
+                    communesList.innerHTML = '';
+                    data.forEach(commune => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = commune.name;
+                        communesList.appendChild(listItem);
+                    });
+                });
+        }
+    }
+
+    // Charger les wilayas au chargement de la page
+    getWilayas();
+</script>
