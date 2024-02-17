@@ -1,0 +1,35 @@
+<style>
+    /* Style pour le conteneur principal */
+    .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Style pour le menu déroulant des wilayas */
+    #wilayaSelect {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    /* Style pour la liste des communes */
+    #communesList {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    /* Style pour les éléments de la liste des communes */
+    #communesList li {
+        margin-bottom: 5px;
+        padding: 5px;
+        background-color: #fff;
+        border-radius: 3px;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    }
+</style>
